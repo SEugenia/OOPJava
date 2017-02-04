@@ -1,4 +1,4 @@
-package ru.evg.zakamen23.ru.evg.zakamen23.range;
+package ru.evg.zakamen23.range;
 
 
 public class UseRange {
