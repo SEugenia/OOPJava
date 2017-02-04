@@ -1,6 +1,4 @@
-/**
- * Created by Евгения on 04.02.2017.
- */
+package ru.evg.zakamen23;
 public class UseRange {
     public static void main(String[] args) {
         Range interval = new Range(7, 12);

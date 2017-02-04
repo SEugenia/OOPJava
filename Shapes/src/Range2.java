@@ -1,8 +1,5 @@
-package ru.evg.zakamen22;
+package ru.evg.zakamen.evg.zakamen22;
 
-/**
- * Created by Евгения on 02.02.2017.
- */
 public class Range2 {
     private double from1;
     private double to1;

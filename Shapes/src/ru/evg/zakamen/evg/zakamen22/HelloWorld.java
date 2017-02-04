@@ -1,4 +1,4 @@
-package ru.evg.zakamen22;
+package ru.evg.zakamen.evg.zakamen22;
 
 /**
  * Created by Евгения on 29.01.2017.

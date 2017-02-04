@@ -1,8 +1,5 @@
-package ru.evg.zakamen22;
+package ru.evg.zakamen.evg.zakamen22;
 
-/**
- * Created by Евгения on 02.02.2017.
- */
 public class UseRange2 {
     public static void main(String[] args) {
         Range2 interval1 = new Range2(30,23, 18, 16);
