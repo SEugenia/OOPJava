@@ -1,4 +1,6 @@
-package ru.evg.zakamen23;
+package ru.evg.zakamen23.ru.evg.zakamen23.range;
+
+
 public class UseRange {
     public static void main(String[] args) {
         Range interval = new Range(7, 12);
@@ -7,6 +9,9 @@ public class UseRange {
 
         interval.setFrom(9);
         interval.setTo(18);
+
+        System.out.println(interval.getFrom());
+        System.out.println(interval.getTo());
 
         System.out.println(interval.getLength());
         System.out.println(interval.isInside(8));
