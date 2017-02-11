@@ -37,6 +37,26 @@ public class Range {
     }
 
     public Range intersect(Range range) {
+        Range extraRange = new Range(from, to);
+        if (to < range.from) {
+            return null;
+        } else if (range.from < from && from > range.to) {
+            return null;
+        } else if (range.from < from && to > range.to) { //(range.from < from && to > range.from && to > range.to)
+            extraRange.from = from;
+            extraRange.to = range.to;
+            return extraRange;
+        } else if (range.from < from && range.to > to) {
+            return extraRange;
+        } else if (to > range.from && range.to > to) {
+            extraRange.from = range.from;
+            return extraRange;
+        } else if (range.from < to && range.to < to){
+
+            return range;}
+        return extraRange;
+    }
+     /*public Range intersect(Range range) {
         if (to < range.from) {
             return null;
         } else if (range.from == to) {
@@ -56,15 +76,16 @@ public class Range {
             return range;
         }
         return range;
-    }
+    }*/
 
-   public Range[] union(Range[] array, Range range1, Range range2) {
+       /* public Range[] union (Range[]array, Range range){
 
-       if (range2.from > to) {
+            if (range.from > to) {
 
 
-       }
-   }
+            }
+      }
+*/
     public String toString() {
         return "[" + from + " ; " + to + "]";
     }
