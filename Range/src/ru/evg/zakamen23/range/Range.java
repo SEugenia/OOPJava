@@ -42,18 +42,18 @@ public class Range {
             return null;
         } else if (range.from < from && from > range.to) {
             return null;
-        } else if (range.from < from && to > range.to) { //(range.from < from && to > range.from && to > range.to)
+        } else if (range.from < from && to > range.to) {
             Range extraRange = new Range(from, to);
             extraRange.from = from;
             extraRange.to = range.to;
-           // return extraRange;
+            return extraRange;
         } else if (range.from < from && range.to > to) {
             Range extraRange = new Range(from, to);
-            //return extraRange;
+            return extraRange;
         } else if (to > range.from && range.to > to) {
             Range extraRange = new Range(from, to);
             extraRange.from = range.from;
-           // return extraRange;
+           return extraRange;
         } else if (range.from < to && range.to < to){
 
             return range;}
