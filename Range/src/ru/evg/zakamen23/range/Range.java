@@ -59,7 +59,7 @@ public class Range {
     }
 
     public Range[] difference(Range range) {
-        if (to < range.from) {
+        if (to < range.from || from > range.to || to == range.from) {
             Range[] array = {new Range(from, to)};
             return array;
         } else if (from > range.to) {
