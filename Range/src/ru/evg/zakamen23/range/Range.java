@@ -36,9 +36,13 @@ public class Range {
         return to - from;
     }
 
-    public Range intersect(Range range) {
+    public boolean intersectionCheck(Range range) {
+        return (to <= range.from || range.to <= from);
+    }
 
-        if (to < range.from || to < range.from || range.to < from || to == range.from || from == range.to) {
+    public Range intersect(Range range) {
+        boolean result = intersectionCheck(range);
+        if (result) {
             return null;
         } else {
             return new Range(Math.max(from, range.from), Math.min(to, range.to));
@@ -46,10 +50,10 @@ public class Range {
     }
 
     public Range[] union(Range range) {
-        if (to < range.from) {
+        if (to <= range.from) {
             Range[] array = {new Range(from, to), new Range(range.from, range.to)};
             return array;
-        } else if (from > range.to) {
+        } else if (from >= range.to) {
             Range[] array = {new Range(range.from, range.to), new Range(from, to)};
             return array;
         } else {
@@ -59,17 +63,20 @@ public class Range {
     }
 
     public Range[] difference(Range range) {
-        if (to < range.from || from > range.to || to == range.from) {
+        boolean result = intersectionCheck(range);
+        // if (to < range.from || from > range.to || to == range.from) {
+        if (result) {
             Range[] array = {new Range(from, to)};
             return array;
-        } else if (from > range.to) {
+        } /*else if (from > range.to) {
             Range[] array = {new Range(from, to)};
             return array;
-        } else if (range.from < from && to > range.to) {
+        }*/ else if (range.from < from && to > range.to) {
             Range[] array = {new Range(range.to, to)};
             return array;
         } else if (range.from < from && range.to > to) {
-            return null;
+            Range[] array = {};
+            return array;
         } else if (to > range.from && range.to > to) {
             Range[] array = {new Range(from, range.from)};
             return array;
