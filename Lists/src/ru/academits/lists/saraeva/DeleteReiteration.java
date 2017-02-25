@@ -9,14 +9,14 @@ public class DeleteReiteration {
 
     public static void main(String[] args) {
         ArrayList<Integer> arrayList = new ArrayList<>();
-        arrayList.add(7);
-        arrayList.add(7);
+        arrayList.add(1);
+        arrayList.add(2);
         arrayList.add(3);
-        arrayList.add(11);
+        /*arrayList.add(11);
         arrayList.add(11);
         arrayList.add(7);
         arrayList.add(16);
-        arrayList.add(7);
+        arrayList.add(7);*/
         ArrayList<Integer> resultArray = new ArrayList<>();
         resultArray.add(arrayList.get(0));
 

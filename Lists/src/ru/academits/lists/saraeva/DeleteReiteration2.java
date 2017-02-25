@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class DeleteReiteration2 {
     public static void main(String[] args) {
         ArrayList<Integer> arrayList = new ArrayList<>();
-        arrayList.add(7);
-        arrayList.add(7);
+        arrayList.add(1);
+        arrayList.add(2);
         arrayList.add(3);
         arrayList.add(11);
         arrayList.add(11);
@@ -18,7 +18,7 @@ public class DeleteReiteration2 {
         arrayList.add(7);
         ArrayList<Integer> resultArray = new ArrayList<>();
 
-        for (int i = 0; i < arrayList.size() - 1; ++i) {
+        for (int i = 0; i < arrayList.size(); ++i) {
             if (resultArray.contains(arrayList.get(i))) {
                 continue;
             }
