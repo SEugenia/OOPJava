@@ -18,11 +18,11 @@ public class DeleteReiteration2 {
         arrayList.add(7);
         ArrayList<Integer> resultArray = new ArrayList<>();
 
-        for (int i = 0; i < arrayList.size(); ++i) {
-            if (resultArray.contains(arrayList.get(i))) {
+        for (Integer anArrayList : arrayList) {
+            if (resultArray.contains(anArrayList)) {
                 continue;
             }
-            resultArray.add(arrayList.get(i));
+            resultArray.add(anArrayList);
         }
         System.out.println(resultArray);
     }
