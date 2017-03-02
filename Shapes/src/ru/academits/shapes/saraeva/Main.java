@@ -13,8 +13,7 @@ public class Main {
         Shape.Rectangle rectangle2 = new Shape.Rectangle(8, 7);
         Shape.Triangle triangle = new Shape.Triangle(0, 0, 0, 3, 4, 0);
         Shape.Circle circle = new Shape.Circle(10);
-        //double[] areas = {square.getArea(), circle.getArea(), rectangle.getArea(), rectangle2.getArea(), triangle.getArea()};
-        //System.out.println(getMaxSquare(areas));
+
         ArrayList<Double> areas = new ArrayList<>();
         areas.add(square.getArea());
         areas.add(rectangle.getArea());
@@ -33,26 +32,27 @@ public class Main {
 
     public static double getMaxSquare(ArrayList<Double> areas, Comparator<Double> comparator) {
         for (int i = 0; i < areas.size() - 1; ++i) {
-            //ArrayList<Double> temp = new ArrayList<>(Arrays.asList(areas.get(i + 1)));
             double temp = areas.get(i + 1);
             if (comparator.compare(temp, areas.get(i)) > 0) {    //if (comparator.compare(temp > areas[i]) {
                 continue;
             }
             int j = i + 1;
             while (j > 0 && comparator.compare(temp, areas.get(i)) <= 0) {  //temp <= areas[j - 1]
-                //areas.get(j) = areas.get(j - 1);
+
                 areas.set(j, areas.get(j - 1));
                 --j;
             }
-            //areas[j] = temp;
             areas.set(j, temp);
-
-
         }
         System.out.println(areas);
         return areas.get(areas.size() - 1);
     }
 }
+
+
+
+
+
 
 
  /* public static double getMaxSquare(double[] areas) {
@@ -65,13 +65,6 @@ public class Main {
         return temp;
     }*/
 
-  /*if (temp > areas[i]) {
-                continue;
-            }
-            int j = i + 1;
-            while (j > 0 && temp <= areas[j - 1]) {
-                areas[j] = areas[j - 1];
-                --j;
-            }
-            areas[j] = temp;*/
+
+
 
