@@ -7,7 +7,7 @@ import java.util.Arrays;
  */
 public class UseRange2 {
     public static void main(String[] args) {
-        Range range1 = new Range(5, 9);
+        Range range1 = new Range(9, 5);
         Range range2 = new Range(1, 5);
         System.out.println("пересечение " + range1.intersect(range2));
         Range[] array = range1.union(range2);

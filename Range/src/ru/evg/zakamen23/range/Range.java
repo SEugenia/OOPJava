@@ -8,15 +8,24 @@ public class Range {
     private double to;
 
     public Range(double from, double to) {
+        if (from > to) {
+            throw new IllegalArgumentException("Конец отрезка меньше начала");
+        }
         this.from = from;
         this.to = to;
     }
 
     public void setFrom(double from) {
+        if (from > to) {
+            throw new IllegalArgumentException("Конец отрезка меньше начала");
+        }
         this.from = from;
     }
 
     public void setTo(double to) {
+        if (from > to) {
+            throw new IllegalArgumentException("Конец отрезка меньше начала");
+        }
         this.to = to;
     }
 
