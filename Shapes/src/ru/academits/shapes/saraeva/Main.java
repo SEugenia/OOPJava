@@ -33,11 +33,11 @@ public class Main {
     public static double getMaxSquare(ArrayList<Double> areas, Comparator<Double> comparator) {
         for (int i = 0; i < areas.size() - 1; ++i) {
             double temp = areas.get(i + 1);
-            if (comparator.compare(temp, areas.get(i)) > 0) {    //if (comparator.compare(temp > areas[i]) {
+            if (comparator.compare(temp, areas.get(i)) > 0) {
                 continue;
             }
             int j = i + 1;
-            while (j > 0 && comparator.compare(temp, areas.get(i)) <= 0) {  //temp <= areas[j - 1]
+            while (j > 0 && comparator.compare(temp, areas.get(i)) <= 0) {
 
                 areas.set(j, areas.get(j - 1));
                 --j;
