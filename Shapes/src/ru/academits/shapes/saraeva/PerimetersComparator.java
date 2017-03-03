@@ -7,12 +7,15 @@ import java.util.Comparator;
  */
 
 
-public class PerimetersComparator implements Comparator<Double> {
+public class PerimetersComparator implements Comparator<Shape> {
 
-    @Override
-    public int compare(Double o1, Double o2) {
-        return o1.compareTo(o2);
+    public int compare(Shape shape1, Shape shape2) {
+        if (shape1.getPerimeter() > shape2.getPerimeter()) {
+            return 1;
+        } else if (shape1.getPerimeter() < shape2.getPerimeter()) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 }
-
-
