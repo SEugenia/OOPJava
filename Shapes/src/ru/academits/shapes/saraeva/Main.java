@@ -20,15 +20,13 @@ public class Main {
         shapes.add(rectangle2);
         shapes.add(triangle);
         shapes.add(circle);
+        System.out.println(shapes);
         Collections.sort(shapes, new AreasComparator());
-        System.out.println(shapes.get(shapes.size() - 1));
+        System.out.println(shapes);
+        //System.out.println(shapes.get(shapes.size() - 1));
         Collections.sort(shapes, new PerimetersComparator());
-        System.out.println(Collections.toString(shapes));
-        System.out.println(shapes.get(shapes.size() - 2));
-
-   /* public String toString() {
-        return shapes;
-    }*/
+        System.out.println(shapes);
+       //System.out.println(shapes.get(shapes.size() - 2));
     }
 }
 

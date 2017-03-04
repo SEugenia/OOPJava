@@ -34,7 +34,7 @@ public class Circle implements Shape {
         return 2 * Math.PI * radius;
     }
 
-   /* public String toString() {
-        return "" + Math.PI * radius * radius + "";
-    }*/
+    public String toString() {
+        return "" + new Circle(radius) + "";
+    }
 }

@@ -34,9 +34,9 @@ public class Square implements Shape {
         return 4 * side;
     }
 
-   /* public String toString() {
-        return "" + side * side + "";
-    }*/
+    public String toString() {
+        return "" + new Square(side) + "";
+    }
 }
 
 

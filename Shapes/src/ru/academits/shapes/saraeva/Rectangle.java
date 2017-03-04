@@ -34,7 +34,8 @@ public class Rectangle implements Shape {
     public double getPerimeter() {
         return 2 * width + 2 * height;
     }
-    /*public String toString() {
-        return "" + width*height + "";
-    }*/
+
+    public String toString() {
+        return "" + new Rectangle(width, height) + "";
+    }
 }
