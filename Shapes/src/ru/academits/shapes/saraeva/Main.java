@@ -14,21 +14,21 @@ public class Main {
         Triangle triangle = new Triangle(0, 0, 0, 3, 4, 0);
         Circle circle = new Circle(10);
 
-        ArrayList<Shape> areas = new ArrayList<>();
-        areas.add(square.getArea());
-        areas.add(rectangle.getArea());
-        areas.add(rectangle2.getArea());
-        areas.add(triangle.getArea());
-        areas.add(circle.getArea());
+        ArrayList<Shape> shapes = new ArrayList<>();
+        shapes.add(square);
+        shapes.add(rectangle);
+        shapes.add(rectangle2);
+        shapes.add(triangle);
+        shapes.add(circle);
+        Collections.sort(shapes, new AreasComparator());
+        System.out.println(shapes.get(shapes.size() - 1));
+        Collections.sort(shapes, new PerimetersComparator());
+        System.out.println(Collections.toString(shapes));
+        System.out.println(shapes.get(shapes.size() - 2));
 
-        ArrayList<Double> perimeters = new ArrayList<>();
-        perimeters.add(square.getPerimeter());
-        perimeters.add(rectangle.getPerimeter());
-        perimeters.add(rectangle2.getPerimeter());
-        perimeters.add(triangle.getPerimeter());
-
-        Collections.sort(perimeters, new AreasComparator());
-        System.out.println(perimeters.get(perimeters.size() - 2));
+   /* public String toString() {
+        return shapes;
+    }*/
     }
 }
 

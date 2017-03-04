@@ -33,4 +33,8 @@ public class Circle implements Shape {
     public double getPerimeter() {
         return 2 * Math.PI * radius;
     }
+
+   /* public String toString() {
+        return "" + Math.PI * radius * radius + "";
+    }*/
 }

@@ -33,7 +33,12 @@ public class Square implements Shape {
     public double getPerimeter() {
         return 4 * side;
     }
+
+   /* public String toString() {
+        return "" + side * side + "";
+    }*/
 }
+
 
 
 
