@@ -2,7 +2,6 @@ package ru.academits.shapes.saraeva;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 
 /**
  * Created by Евгения on 02.03.2017.
@@ -15,7 +14,7 @@ public class Main {
         Triangle triangle = new Triangle(0, 0, 0, 3, 4, 0);
         Circle circle = new Circle(10);
 
-        ArrayList<Double> areas = new ArrayList<>();
+        ArrayList<Shape> areas = new ArrayList<>();
         areas.add(square.getArea());
         areas.add(rectangle.getArea());
         areas.add(rectangle2.getArea());
@@ -23,13 +22,13 @@ public class Main {
         areas.add(circle.getArea());
 
         ArrayList<Double> perimeters = new ArrayList<>();
-        areas.add(square.getPerimeter());
-        areas.add(rectangle.getPerimeter());
-        areas.add(rectangle2.getPerimeter());
-        areas.add(triangle.getPerimeter());
+        perimeters.add(square.getPerimeter());
+        perimeters.add(rectangle.getPerimeter());
+        perimeters.add(rectangle2.getPerimeter());
+        perimeters.add(triangle.getPerimeter());
 
-        Collections.sort(areas, new AreasComparator());
-        System.out.println(areas.get(areas.size()-1));
+        Collections.sort(perimeters, new AreasComparator());
+        System.out.println(perimeters.get(perimeters.size() - 2));
     }
 }
 
