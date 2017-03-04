@@ -35,7 +35,7 @@ public class Square implements Shape {
     }
 
     public String toString() {
-        return "" + new Square(side) + "";
+        return "" + "кв-пер:" + getPerimeter() + " кв-пл: " + getArea() + "";
     }
 }
 

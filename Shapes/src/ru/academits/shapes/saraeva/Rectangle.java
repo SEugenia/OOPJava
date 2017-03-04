@@ -36,6 +36,6 @@ public class Rectangle implements Shape {
     }
 
     public String toString() {
-        return "" + new Rectangle(width, height) + "";
+        return "" + "прям-пер:" + getPerimeter() + " прям-пл: " + getArea() + "";
     }
 }

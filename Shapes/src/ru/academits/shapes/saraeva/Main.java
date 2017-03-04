@@ -12,7 +12,7 @@ public class Main {
         Rectangle rectangle = new Rectangle(4, 6);
         Rectangle rectangle2 = new Rectangle(8, 7);
         Triangle triangle = new Triangle(0, 0, 0, 3, 4, 0);
-        Circle circle = new Circle(10);
+        Circle circle = new Circle(3);
 
         ArrayList<Shape> shapes = new ArrayList<>();
         shapes.add(square);
@@ -20,13 +20,10 @@ public class Main {
         shapes.add(rectangle2);
         shapes.add(triangle);
         shapes.add(circle);
-        System.out.println(shapes);
         Collections.sort(shapes, new AreasComparator());
-        System.out.println(shapes);
-        //System.out.println(shapes.get(shapes.size() - 1));
+        System.out.println(shapes.get(shapes.size() - 1));
         Collections.sort(shapes, new PerimetersComparator());
-        System.out.println(shapes);
-       //System.out.println(shapes.get(shapes.size() - 2));
+        System.out.println(shapes.get(shapes.size() - 2));
     }
 }
 
