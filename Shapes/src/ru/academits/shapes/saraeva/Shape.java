@@ -7,7 +7,7 @@ public interface Shape {
     
     double getWidth();
 
-    double getHight();
+    double getHeight();
 
     double getArea();
 

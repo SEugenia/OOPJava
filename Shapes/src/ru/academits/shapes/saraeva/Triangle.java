@@ -20,16 +20,20 @@ public class Triangle implements Shape {
         this.y3 = y3;
     }
 
-    @Override
-
-    public double getWidth() {
-        return Math.max(Math.max(x1, x2), x3) - Math.min(Math.min(x1, x2), x3);
+    private double calcDistance(double number1, double number2, double number3) {
+        return Math.max(Math.max(number1, number2), number3) - Math.min(Math.min(number1, number2), number3);
     }
 
     @Override
 
-    public double getHight() {
-        return Math.max(Math.max(y1, y2), y3) - Math.min(Math.min(y1, y2), y3);
+    public double getWidth() {
+        return calcDistance(x1, x2, x3);
+    }
+
+    @Override
+
+    public double getHeight() {
+        return calcDistance(y1, y2, y3);
     }
 
     @Override
@@ -46,6 +50,27 @@ public class Triangle implements Shape {
 
     public String toString() {
         return "" + "тр-пер:" + getPerimeter() + " тр-пл: " + getArea() + "";
+    }
+
+    public boolean equals(Object o) {
+        if (o == this)
+            return true;
+        if ((o == null) || o.getClass() != this.getClass())
+            return false;
+        Triangle triangle = (Triangle) o;
+        return x1 == triangle.x1 && y1 == triangle.y1 && x2 == triangle.x2 && y2 == triangle.y2 && x3 == triangle.x3 && y3 == triangle.y3;
+    }
+
+    public int hashCode() {
+        final int prime = 37;
+        int hash = 1;
+        hash = prime * hash + (int) x1;
+        hash = prime * hash + (int) y1;
+        hash = prime * hash + (int) x2;
+        hash = prime * hash + (int) y2;
+        hash = prime * hash + (int) x3;
+        hash = prime * hash + (int) y3;
+        return hash;
     }
 }
 
