@@ -5,15 +5,13 @@ package ru.academits.vector.saraeva;
  */
 public class Vector {
     private int dimension;
-    private double[] vector = new double[dimension];
+    private int[] vector;
 
 
-    public Vector(int dimension) {
+    public Vector(int dimension, int[] vector) {
         this.dimension = dimension;
-        for (int i = 0; i < vector.length; ++i) {
-            this.vector[i] = vector[i];
+        for (int i : this.vector = vector) {
         }
-
     }
 
     public Vector() {
