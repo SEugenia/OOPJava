@@ -4,27 +4,27 @@ package ru.academits.vector.saraeva;
  * Created by Евгения on 10.03.2017.
  */
 public class Vector {
-    private int dimension;
-    private int[] vector;
+    private double[] vector;
 
 
-    public Vector(int dimension, int[] vector) {
-        this.dimension = dimension;
-        for (int i : this.vector = vector) {
+    public Vector(double[] vector) {
+        //double[] newVector = new double[vector.length];
+        for (int i = 0; i < vector.length; ++i) {
+            this.vector[i] = vector[i];
         }
     }
 
-    public Vector() {
+   /* public Vector() {
 //TODO copyVector
-    }
+        }
 
-    public Vector(double[] filling) {
-        // TODO filling
-    }
+    public Vector( double[] filling){
+            // TODO filling
+        }
 
-    public Vector(int n, double[] filling) {
-        // TODO filling
-    }
+    public Vector( int n, double[] filling){
+            // TODO filling
+        }
 
     public int getSize() {
         return dimension;
@@ -35,7 +35,7 @@ public class Vector {
 
     }
 
-}
+}*/
 
 
 }
