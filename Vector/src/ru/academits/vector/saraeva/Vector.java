@@ -6,15 +6,17 @@ package ru.academits.vector.saraeva;
 public class Vector {
     private double[] vector;
 
-
+    /* public Vector (Vector vector)  {
+         Vector vector2 = new Vector();
+     }*/
     public Vector(double[] vector) {
-        //double[] newVector = new double[vector.length];
+        double[] newVector = new double[vector.length];
         for (int i = 0; i < vector.length; ++i) {
-            this.vector[i] = vector[i];
+            this.vector[i] = newVector[i];
         }
     }
 
-   /* public Vector() {
+   /* public Vector(double[] vector, double[] ) {
 //TODO copyVector
         }
 
@@ -36,6 +38,4 @@ public class Vector {
     }
 
 }*/
-
-
 }
