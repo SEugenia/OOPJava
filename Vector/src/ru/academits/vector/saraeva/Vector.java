@@ -7,36 +7,38 @@ public class Vector {
     private double[] vector;
 
     public Vector(int dimension) {                // конструктор а
-        double[] vector = new double[dimension];
+        this.vector = new double[dimension];
     }
 
-    public Vector(Vector vector) {          // конструктор b
-        double[] arr = new double[]{};
-        Vector vector2 = new Vector(arr);
-        vector2=vector;
+    public Vector(Vector vectorObject) {          // конструктор b
+        this(vectorObject.vector);
     }
 
-    public Vector(double[] vector) {
-        double[] newVector = new double[vector.length]; // конструктор с
-        for (int i = 0; i < vector.length; ++i) {
-            vector[i] = newVector[i];
+    public Vector(double[] vectorArray) {
+        this.vector = new double[vectorArray.length];
+        for (int i = 0; i < vectorArray.length; ++i) {
+            this.vector[i] = vectorArray[i];
         }
     }
 
-    public Vector(int dimension, double[] vector) {     //конструктор d
-        double[] newVector = new double[vector.length];
-        if (vector.length <= newVector.length) {
-            for (int i = 0; i < vector.length; ++i) {
-                vector[i] = newVector[i];
+    public Vector(int dimension, double[] vectorArray) {     //конструктор d
+        this.vector = new double[dimension];
+
+        for (int i = 0; i < Math.min(vector.length, vectorArray.length); ++i) {
+            this.vector[i] = vectorArray[i];
+        }
+
+        if (dimension < vectorArray.length) {
+            for (int i = vector.length; i < vectorArray.length; ++i) {
+                this.vector[i] = 0;
             }
         }
-        if (vector.length > newVector.length) {
-            for (int i = 0; i < newVector.length; ++i) {
-                vector[i] = newVector[i];
-            }
-            for (int i = newVector.length; i < vector.length; ++i) {
-                vector[i] = 0;
-            }
+    }
+
+   /* public Vector totUpVectors(Vector vector2) {
+
+        for (int i = 0; i < Math.min(this.vector.length, ); ++i) {
+            this.vector[i] = vectorArray[i];
         }
     }
 
@@ -63,4 +65,4 @@ public class Vector {
     }
 
 }*/
-}
+    }
