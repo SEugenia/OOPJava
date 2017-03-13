@@ -5,6 +5,16 @@ package ru.academits.vector.saraeva;
  */
 public class Main {
     public static void main(String[] args) {
-        Vector[] vector1 = new Vector(1.0, 2.3, 6.7);
+        double[] arr = {1, 9};
+        double[] arr2 = {1, 4, 0, 11, 6, 8};
+        Vector vector3 = new Vector(arr);
+        Vector vector = new Vector(arr2);
+        for (double e : arr2) {
+            System.out.println(vector.toString());
+        }
+        System.out.println(vector3.toString());
+        System.out.println(vector3.getSize());
+
+
     }
 }

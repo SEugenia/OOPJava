@@ -16,53 +16,37 @@ public class Vector {
 
     public Vector(double[] vectorArray) {
         this.vector = new double[vectorArray.length];
-        for (int i = 0; i < vectorArray.length; ++i) {
-            this.vector[i] = vectorArray[i];
-        }
+        System.arraycopy(vectorArray, 0, this.vector, 0, vectorArray.length);
     }
 
     public Vector(int dimension, double[] vectorArray) {     //конструктор d
         this.vector = new double[dimension];
 
-        for (int i = 0; i < Math.min(vector.length, vectorArray.length); ++i) {
-            this.vector[i] = vectorArray[i];
-        }
-
-        if (dimension < vectorArray.length) {
-            for (int i = vector.length; i < vectorArray.length; ++i) {
-                this.vector[i] = 0;
-            }
-        }
-    }
-
-   /* public Vector totUpVectors(Vector vector2) {
-
-        for (int i = 0; i < Math.min(this.vector.length, ); ++i) {
-            this.vector[i] = vectorArray[i];
-        }
-    }
-
-
-   /* public Vector(double[] vector, double[] ) {
-//TODO copyVector
-        }
-
-    public Vector( double[] filling){
-            // TODO filling
-        }
-
-    public Vector( int n, double[] filling){
-            // TODO filling
-        }
-
-    public int getSize() {
-        return dimension;
+        System.arraycopy(vectorArray, 0, this.vector, 0, Math.min(vector.length, vectorArray.length));
     }
 
     public String toString() {
-//for(int i=0; i<vector.length;++i){
 
+        return "{" + vector + "}";
     }
 
-}*/
+    public void totUpVectors(Vector vector2) {
+        int resultDimension = Math.max(vector.length, vector2.getSize());
+        double[] vectorResult = new double[resultDimension];
+        for (int i = 0; i < Math.max(vector.length, vector2.getSize()); ++i) {
+            vectorResult[i] = vector[i] + vector2();
+        }
     }
+
+    public void multiplyByScalar(double scalar, Vector vector2) {
+        for (int i = 0; i < vector2.getSize(); ++i) {
+            vector2[i] = scalar * vector2[i];
+        }
+    }
+
+    public int getSize() {
+        return vector.length;
+    }
+
+
+}
