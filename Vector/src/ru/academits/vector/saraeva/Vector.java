@@ -26,21 +26,27 @@ public class Vector {
     }
 
     public String toString() {
-
-        return "{" + vector + "}";
+        StringBuilder builder = new StringBuilder();
+        for (double aVector : vector) {
+            builder.append(aVector);
+            builder.append(' ');
+        }
+        builder.deleteCharAt(builder.length() - 1);
+        return "{" + builder + "}";
     }
 
-    public void totUpVectors(Vector vector2) {
+   /* public void totUpVectors(Vector vector2) {
         int resultDimension = Math.max(vector.length, vector2.getSize());
         double[] vectorResult = new double[resultDimension];
         for (int i = 0; i < Math.max(vector.length, vector2.getSize()); ++i) {
             vectorResult[i] = vector[i] + vector2();
         }
-    }
+    }*/
 
-    public void multiplyByScalar(double scalar, Vector vector2) {
-        for (int i = 0; i < vector2.getSize(); ++i) {
-            vector2[i] = scalar * vector2[i];
+    public void multiplyByScalar(double scalar) {
+        double[] resVector = new double[vector.length];
+        for (int i = 0; i < vector.length; ++i) {
+            resVector[i] = scalar * vector[i];
         }
     }
 
