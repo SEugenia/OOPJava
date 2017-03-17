@@ -27,32 +27,47 @@ public class Vector {
 
     public String toString() {
         StringBuilder builder = new StringBuilder();
+        builder.append('{');
         for (double aVector : vector) {
             builder.append(aVector);
+            builder.append(',');
             builder.append(' ');
         }
-        builder.deleteCharAt(builder.length() - 1);
-        return "{" + builder + "}";
+        builder.delete(builder.length() - 2, builder.length());
+        builder.append('}');
+        return builder.toString();
     }
 
-   /* public void totUpVectors(Vector vector2) {
-        int resultDimension = Math.max(vector.length, vector2.getSize());
-        double[] vectorResult = new double[resultDimension];
-        for (int i = 0; i < Math.max(vector.length, vector2.getSize()); ++i) {
-            vectorResult[i] = vector[i] + vector2();
+
+    public void addUpVectors(Vector vector2) {
+        double[] newVector = vector;
+        for (int i = 0; i < vector.length; ++i) {
+            newVector[i] = vector[i];
         }
-    }*/
+        if (vector.length < vector2.getSize()) {
+            int oldLength = vector.length;
+
+            vector = new double[vector2.getSize()];
+            for (int i = 0; i < oldLength; ++i) {
+                vector[i] = newVector[i];
+            }
+        }
+        for (int i = 0; i < vector.length; ++i) {
+            vector[i] = vector[i] + vector2.vector[i];
+        }
+    }
 
     public void multiplyByScalar(double scalar) {
-        double[] resVector = new double[vector.length];
         for (int i = 0; i < vector.length; ++i) {
-            resVector[i] = scalar * vector[i];
+            vector[i] = scalar * vector[i];
         }
+    }
+
+    public void rotateVector() {
+        multiplyByScalar(-1);
     }
 
     public int getSize() {
         return vector.length;
     }
-
-
 }

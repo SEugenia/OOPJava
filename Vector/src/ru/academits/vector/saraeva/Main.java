@@ -5,17 +5,27 @@ package ru.academits.vector.saraeva;
  */
 public class Main {
     public static void main(String[] args) {
-        double[] arr = {1, 9};
-        double[] arr2 = {1, 4, 0, 11, 6, 8};
+        double[] arr = {1, 9, 2, 2};
+        double[] arr2 = {1, 4, 0, 11, 6, 1};
         Vector vector3 = new Vector(arr);
         Vector vector = new Vector(arr2);
-        //vector3.toString();
+        /*System.out.println(vector3.toString());
         System.out.print(vector.toString());
         System.out.println();
-        vector.multiplyByScalar(3);
+        vector3.multiplyByScalar(3);
+        System.out.println(vector3);
+        vector3.rotateVector();
+        System.out.println(vector3);
         System.out.println();
-        System.out.println(vector3.getSize());
-
-
+        System.out.println(vector3.getSize());*/
+        vector3.addUpVectors(vector);
+        /*System.out.println(vector3.toString());
+        System.out.println(vector.toString());
+        vector3.multiplyByScalar(3);
+        System.out.println(vector3.toString());
+        vector3.rotateVector();*/
+        System.out.println(vector3.toString());
+        //vector.rotateVector();
+        //System.out.println(vector.toString());
     }
 }
