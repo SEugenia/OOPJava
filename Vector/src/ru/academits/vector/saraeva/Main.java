@@ -18,13 +18,15 @@ public class Main {
         System.out.println(vector3);
         System.out.println();
         System.out.println(vector3.getSize());*/
-        vector3.addUpVectors(vector);
+        //vector3.addUpVectors(vector);
+        //vector.vectorMinusVector(vector);
         /*System.out.println(vector3.toString());
         System.out.println(vector.toString());
         vector3.multiplyByScalar(3);
         System.out.println(vector3.toString());
         vector3.rotateVector();*/
-        System.out.println(vector3.toString());
+        System.out.println(vector.getElement(6));
+        //System.out.println(vector.toString());
         //vector.rotateVector();
         //System.out.println(vector.toString());
     }

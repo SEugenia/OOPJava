@@ -40,19 +40,17 @@ public class Vector {
 
 
     public void addUpVectors(Vector vector2) {
-        double[] newVector = vector;
-        for (int i = 0; i < vector.length; ++i) {
-            newVector[i] = vector[i];
-        }
         if (vector.length < vector2.getSize()) {
+            double[] newVector = vector;
             int oldLength = vector.length;
-
             vector = new double[vector2.getSize()];
+
             for (int i = 0; i < oldLength; ++i) {
                 vector[i] = newVector[i];
             }
         }
-        for (int i = 0; i < vector.length; ++i) {
+        for (int i = 0; i < vector2.vector.length; ++i) {
+
             vector[i] = vector[i] + vector2.vector[i];
         }
     }
@@ -63,11 +61,34 @@ public class Vector {
         }
     }
 
+    public void vectorMinusVector(Vector vector2) {
+        if (vector.length < vector2.getSize()) {
+            double[] newVector = vector;
+            int oldLength = vector.length;
+            vector = new double[vector2.getSize()];
+
+            for (int i = 0; i < oldLength; ++i) {
+                vector[i] = newVector[i];
+            }
+        }
+        for (int i = 0; i < vector2.vector.length; ++i) {
+
+            vector[i] = vector[i] - vector2.vector[i];
+        }
+    }
+
     public void rotateVector() {
         multiplyByScalar(-1);
     }
 
     public int getSize() {
         return vector.length;
+    }
+
+    public double getElement(int index) {
+        if (index < 0 || index >= vector.length) {
+            throw new ArrayIndexOutOfBoundsException("Введите значение индекса в пределах от нуля по размерность вектора-1 включительно");
+        }
+        return vector[index];
     }
 }
