@@ -91,4 +91,19 @@ public class Vector {
         }
         return vector[index];
     }
+
+    public void setNewElement(int index, double newElement) {
+        if (index < 0 || index >= vector.length + 1) {
+            throw new ArrayIndexOutOfBoundsException("Введите значение индекса в пределах от нуля по размерность вектора включительно");
+        }
+        double[] oldVector = vector;
+        vector = new double[vector.length + 1];
+        for (int i = 0; i < oldVector.length; ++i) {
+            vector[i] = oldVector[i];
+        }
+        for (int i = vector.length - 2; i >= index; --i) {
+            vector[i + 1] = vector[i];
+        }
+        vector[index] = newElement;
+    }
 }

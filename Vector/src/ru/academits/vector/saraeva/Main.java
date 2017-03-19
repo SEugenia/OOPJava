@@ -25,9 +25,11 @@ public class Main {
         vector3.multiplyByScalar(3);
         System.out.println(vector3.toString());
         vector3.rotateVector();*/
-        System.out.println(vector.getElement(6));
+        //  System.out.println(vector.getElement(6));
         //System.out.println(vector.toString());
         //vector.rotateVector();
         //System.out.println(vector.toString());
+        vector.setNewElement(-1, 7);
+        System.out.println(vector.toString());
     }
 }
