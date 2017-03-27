@@ -1,5 +1,7 @@
 package ru.academits.vector.saraeva;
 
+import java.util.Arrays;
+
 /**
  * Created by Евгения on 10.03.2017.
  */
@@ -41,13 +43,10 @@ public class Vector {
 
     public void addUpVectors(Vector vector2) {
         if (vector.length < vector2.getSize()) {
-            double[] newVector = vector;
+            double[] oldVector = vector;
             int oldLength = vector.length;
             vector = new double[vector2.getSize()];
-
-            for (int i = 0; i < oldLength; ++i) {
-                vector[i] = newVector[i];
-            }
+            System.arraycopy(oldVector, 0, vector, 0, oldLength);
         }
         for (int i = 0; i < vector2.vector.length; ++i) {
 
@@ -63,13 +62,10 @@ public class Vector {
 
     public void vectorMinusVector(Vector vector2) {
         if (vector.length < vector2.getSize()) {
-            double[] newVector = vector;
+            double[] oldVector = vector;
             int oldLength = vector.length;
             vector = new double[vector2.getSize()];
-
-            for (int i = 0; i < oldLength; ++i) {
-                vector[i] = newVector[i];
-            }
+            System.arraycopy(oldVector, 0, vector, 0, oldLength);
         }
         for (int i = 0; i < vector2.vector.length; ++i) {
 
@@ -96,14 +92,26 @@ public class Vector {
         if (index < 0 || index >= vector.length + 1) {
             throw new ArrayIndexOutOfBoundsException("Введите значение индекса в пределах от нуля по размерность вектора включительно");
         }
-        double[] oldVector = vector;
-        vector = new double[vector.length + 1];
-        for (int i = 0; i < oldVector.length; ++i) {
-            vector[i] = oldVector[i];
-        }
-        for (int i = vector.length - 2; i >= index; --i) {
-            vector[i + 1] = vector[i];
-        }
         vector[index] = newElement;
     }
+
+    public boolean equals(Object object) {
+        if (object == this) {
+            return true;
+        }
+        if (object == null || object.getClass() != this.getClass()) {
+            return false;
+        }
+        Vector v = (Vector) object;
+        return object == this || vector == v.vector;
+    }
+
+    public int hashCode() {
+        final int prime = 31;
+        int hash = 1;
+        hash = prime * hash + Arrays.hashCode(vector);
+        return hash;
+    }
+
+
 }
