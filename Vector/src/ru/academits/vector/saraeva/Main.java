@@ -13,6 +13,7 @@ public class Main {
         Vector vector = new Vector(arr);
         Vector vector2 = new Vector(arr2);
         Vector vector3 = new Vector(arr3);
+        //vector3.setNewElement(2,17);
         /*System.out.println(vector.hashCode());
         System.out.println(vector3.hashCode());
         System.out.println(vector.equals(vector3));*/
@@ -39,17 +40,6 @@ public class Main {
         //vector.setNewElement(3, 7);
         //System.out.println(vector.toString());
         //System.out.println(vector3.equals(vector));
-    }
-
-    public static double[] addUpVectors(Vector vector2, Vector vector3, double[] arr2, double[] arr3) {
-        int resDimension = Math.max(arr2.length, arr3.length);
-        double[] sumArray = new double[resDimension];
-
-        for (int i = 0; i < resDimension; ++i) {
-
-            sumArray[i] = arr2[i] + arr3[i];
-        }
-        return sumArray;
     }
 }
 

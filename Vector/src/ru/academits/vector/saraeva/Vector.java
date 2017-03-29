@@ -89,14 +89,14 @@ public class Vector {
     }
 
     public void setNewElement(int index, double newElement) {
-        if (index < 0 || index >= vector.length + 1) {
-            throw new ArrayIndexOutOfBoundsException("Введите значение индекса в пределах от нуля по размерность вектора включительно");
+        if (index < 0 || index >= vector.length ) {
+            throw new ArrayIndexOutOfBoundsException("Введите значение индекса в пределах от нуля по размерность вектора-1 включительно");
         }
         vector[index] = newElement;
     }
 
-    public boolean equals(Object object) {
-        if (object == this) {
+   /* public boolean equals(Object object) {
+        if (Arrays.e) { // if (object == this) {
             return true;
         }
         if (object == null || object.getClass() != this.getClass()) {
@@ -104,7 +104,7 @@ public class Vector {
         }
         Vector v = (Vector) object;
         return object == this || vector == v.vector;
-    }
+    }*/
 
     public int hashCode() {
         final int prime = 31;
@@ -112,6 +112,11 @@ public class Vector {
         hash = prime * hash + Arrays.hashCode(vector);
         return hash;
     }
-
+    public static Vector addUpVectors2(Vector vector2, Vector vector3) {
+       int resultDimension=Math.max(vector2.getSize(),vector3.getSize());
+       Vector resultVector=new Vector(resultDimension);
+       vector2.addUpVectors(vector3);
+       // System.arraycopy(vector2.addUpVectors(vector3), 0, resultVector, 0, resultDimension);
+    return resultVector;}
 
 }
